@@ -1,0 +1,26 @@
+{% extends 'sentiment_analysis_api/base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to the Sentiment Analysis Web App</h1>
+            <p>This web app allows you to analyze the sentiment of text and gain valuable insights.</p>
+            <p>Whether you're a business owner looking to understand customer feedback or simply curious about the emotional tone of a piece of text, our Sentiment Analysis App can help!</p>
+            <p>Here's how it works:</p>
+            <ul class="text-left">
+                <li>Enter a piece of text in the input box below.</li>
+                <li>Click the "Analyze Sentiment" button.</li>
+                <li>Receive an instant classification of the sentiment as positive, negative, or neutral.</li>
+            </ul>
+            <p>Our app is easy to use and provides quick results, making it a valuable tool for various use cases:</p>
+            <ul class="text-right">
+                <li>Understanding customer reviews.</li>
+                <li>Gaining insights from user feedback.</li>
+                <li>And much more!</li>
+            </ul>
+            <a href="{% url 'analyze_sentiment' %}" class="btn btn-primary btn-lg btn-block mt-3">Start Analyzing</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

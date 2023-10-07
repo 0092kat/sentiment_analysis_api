@@ -1,0 +1,70 @@
+{% extends 'sentiment_analysis_api/base.html' %}
+
+{% block content %}
+  <div class="container mt-5 text-center">
+    <form action="{% url 'analyze_sentiment' %}" method="post" class="search-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <input type="text" name="text" id="comment" class="form-control form-control-lg">
+      </div>
+
+      <div class="row justify-content-center"> <!-- Center-align form elements -->
+        <div class="col-md-6">
+          <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block">
+        </div>
+        <div class="col-md-6"> 
+          <button type="button" class="btn btn-danger btn-lg btn-block" id="reset-button">Reset</button>
+        </div>
+      </div>
+
+      <!-- Display the input text here -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <p>
+            {% if request.method == 'POST' %}
+              You entered: <strong>{{ request.POST.text }}</strong>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+        <div class="col-md-12">
+          <h1>This sentence is:
+
+            {% if class %}
+              {% if class == 'Strong Positive' %}
+                <span style="color: green;">
+                    {{ class }} 
+                </span>
+              {% elif class == 'Positive' %}
+                <span style="color: lightgreen;">
+                    {{ class }} 
+                </span>
+              {% elif class == 'Neutral' %}
+                <span style="color: gray;">
+                    {{ class }} 
+                </span>
+              {% elif class == 'Negative' %}
+                <span style="color: orange;">
+                    {{ class }} 
+                </span>
+              {% elif class == 'Strong Negative' %}
+                <span style="color: red;">
+                    {{ class }} 
+                </span>
+              {% endif %}
+            {% endif %}
+
+          </h1>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("reset-button").addEventListener("click", function() {
+      document.getElementById("comment").value = "";
+    });
+  </script>
+{% endblock %}
