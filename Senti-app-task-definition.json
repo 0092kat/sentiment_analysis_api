@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:792487040513:task-definition/django-app-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:792487040513:task-definition/Senti-app-task-definition:1",
     "containerDefinitions": [
         {
-            "name": "django-api",
-            "image": "792487040513.dkr.ecr.us-east-2.amazonaws.com/api:latest",
+            "name": "api",
+            "image": "792487040513.dkr.ecr.us-east-2.amazonaws.com/api:",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "django-api-8000-tcp",
+                    "name": "api-8000-tcp",
                     "containerPort": 8000,
                     "hostPort": 8000,
                     "protocol": "tcp",
@@ -24,7 +24,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/django-app-task-definition",
+                    "awslogs-group": "/ecs/Senti-app-task-definition",
                     "awslogs-region": "us-east-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -32,7 +32,7 @@
             }
         }
     ],
-    "family": "django-app-task-definition",
+    "family": "Senti-app-task-definition",
     "taskRoleArn": "arn:aws:iam::792487040513:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::792487040513:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
@@ -82,7 +82,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-10-07T08:46:30.298Z",
+    "registeredAt": "2023-10-07T10:51:16.671Z",
     "registeredBy": "arn:aws:iam::792487040513:root",
     "tags": []
 }
