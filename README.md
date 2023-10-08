@@ -40,9 +40,9 @@ Update the task definition with the new Docker image
 
 Update the service with the new task definition
 
-aws ecs update-service --service sentiment-analysis-api --task-definition sentiment-analysis-api --cluster cluster-name
+`aws ecs update-service --service sentiment-analysis-api --task-definition sentiment-analysis-api --cluster cluster-name`
 
-NB: to access the app you have to open the task in the AWS ECS console to access the web adress, make sure to add :8000 to the public link as the app is exposed in port 8000, the link will change everytime the app is deployed, thus after every succesful deployment use the new provided link. dont forget to add :8000 to the link. example http://52.15.132.242/ is what you will get from the AWS ECS console, and this is what you will run to access the app http://52.15.132.242:8000/ 
+**NB:** to access the app you have to open the task in the AWS ECS console to access the web adress, make sure to add :8000 to the public link as the app is exposed in port 8000, the link will change everytime the app is deployed, thus after every succesful deployment use the new provided link. dont forget to add :8000 to the link. example http://52.15.132.242/ is what you will get from the AWS ECS console, and this is what you will run to access the app http://52.15.132.242:8000/ 
 
 ## Usage of the API
 
