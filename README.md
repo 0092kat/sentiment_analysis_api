@@ -14,11 +14,14 @@ This project is a Django web application that provides an API for sentiment anal
 ### Prerequisites
 - Docker
 - AWS CLI
+- AWS credentials and account
 
 ### Installation
 1. Clone the repository
 
-`git clone <repository_url>`
+`git clone https://github.com/0092kat/sentiment_analysis_api.git`
+
+before building the docker file, you will need to change AWS credentials in the cicd-workflow.yml file as they duffer to every user. buts thats only for when build the cicd workflow.
 
 2. Build the Docker image
 
