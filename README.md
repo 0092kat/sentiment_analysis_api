@@ -39,21 +39,15 @@ Update the service with the new task definition
 aws ecs update-service --service sentiment-analysis-api --task-definition sentiment-analysis-api --cluster cluster-name
 
 ## Usage
-To use the API, make a POST request to `<api_url>/analyze` with a JSON body containing the text to be analyzed.
+![Demo GIF](api-usage.gif)
 
-Example:
-```json
-{
- "text": "I love this product!"
-}
-
-CI/CD Workflow
+#### CI/CD Workflow
 The project includes a CI/CD workflow using GitHub Actions. This workflow is triggered whenever changes are pushed to the repository. It automatically builds a new Docker image, pushes it to ECR, and deploys it on ECS with Fargate.
 
-License
+**License**
 This project is licensed under the MIT License.
 
-Contact
-Your Name - 201802440@spu.ac.za
+**Contact**
+[Katlego KGOSI - Email me](201802440@spu.ac.za)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/0092kat/sentiment_analysis_api)https://github.com/0092kat/sentiment_analysis_api
+[Project Link](https://github.com/0092kat/sentiment_analysis_api) 
